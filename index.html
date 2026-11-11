@@ -27,7 +27,7 @@
 <body>
   <header class="site-header"><div class="container header-inner">
     <a class="brand" href="#top" aria-label="FalcHovenier — ecologische tuinen"><img id="brand-logo" class="brand-mark" alt="Beeldmerk FalcHovenier" hidden><span class="brand-copy"><strong>FalcHovenier</strong><span>ecologische tuinen</span></span></a>
-    <nav class="nav" aria-label="Hoofdnavigatie"><a href="#diensten">Diensten</a><a href="#waarom">Waarom kiezen</a><a href="#werkwijze">Werkwijze</a><a href="#reviews">Ervaringen</a><a href="#contact">Contact</a></nav>
+    <nav class="nav" aria-label="Hoofdnavigatie"><a href="#diensten">Diensten</a><a href="#waarom">Waarom</a><a href="#werkwijze">Werkwijze</a><a href="#reviews">Ervaringen</a><a href="#contact">Contact</a></nav>
   </div></header>
   <main id="top">
     <section class="hero"><div class="container hero-inner"><div class="hero-copy">
@@ -42,7 +42,7 @@
       <article class="service-card"><h3>Natuurlijke borders</h3><p>Ik maak borders met vaste planten en inheemse struiken die zorgen voor meer biodiversiteit en een levendige tuin.</p></article>
       <article class="service-card"><h3>Groenafval &amp; grondwerk</h3><p>Snoeiafval en grond neem ik graag mee in mijn eigen kipperwagen, zodat jij minder werk hebt.</p></article>
     </div></div></section>
-    <section id="waarom" class="section split"><div class="container split-inner"><div class="panel"><div class="section-header" style="margin-bottom:0"><h2>Waarom kiezen voor een ecologische tuin?</h2></div><ul class="check-list"><li>Meer vogels, insecten en leven in je tuin</li><li>Een gezonde bodem en sterke planten</li><li>Regenwater beter vasthouden</li><li>Een tuin die natuurlijke balans en rust geeft</li></ul></div><div class="panel"><div class="section-header" style="margin-bottom:0"><h2>Een tuin die bij jouw leven past</h2></div><p style="margin-top:1rem;color:var(--muted)">Samen kijken we naar wat jouw tuin nodig heeft en wat jij belangrijk vindt. Zo ontstaat een buitenruimte die mooi is én goed gedijt, met ruimte voor planten en dieren.</p></div></div></section>
+    <section id="waarom" class="section split"><div class="container split-inner"><div class="panel"><div class="section-header" style="margin-bottom:0"><h2>Waarom kiezen voor FalcHovenier?</h2></div><ul class="check-list"><li>Meer vogels, insecten en leven in je tuin</li><li>Een gezonde bodem en sterke planten</li><li>Regenwater beter vasthouden</li><li>Een tuin die natuurlijke balans en rust geeft</li></ul></div><div class="panel"><div class="section-header" style="margin-bottom:0"><h2>Een tuin die bij jouw leven past</h2></div><p style="margin-top:1rem;color:var(--muted)">Samen kijken we naar wat jouw tuin nodig heeft en wat jij belangrijk vindt. Zo ontstaat een buitenruimte die mooi is én goed gedijt, met ruimte voor planten en dieren.</p></div></div></section>
     <section class="section"><div class="container"><div class="section-header"><h2>Waarom FalcHovenier</h2><p>Een ecologische tuin vraagt om lokaal inzicht, aandacht en een doordachte werkwijze.</p></div><div class="why-grid">
       <article class="why-card"><div class="icon" aria-hidden="true">🌱</div><h3>Lokale kennis</h3><p>Ik werk in en rond Soest en kijk welke aanpak en beplanting goed passen bij jouw tuin.</p></article>
       <article class="why-card"><div class="icon" aria-hidden="true">🌍</div><h3>Bewust tuinieren</h3><p>Ik werk met compost, organisch materiaal en natuurvriendelijke methoden, met zo min mogelijk verspilling.</p></article>
@@ -59,18 +59,5 @@
     <section id="contact" class="section cta-wrap"><div class="container"><div class="cta-panel"><div><h2>Vraag een offerte aan</h2><p>Woon je in Soest of omgeving? Vertel me wat je wilt verbeteren in je tuin, dan kijken we samen naar de mogelijkheden.</p></div><div class="btns"><a class="btn primary" href="tel:+31613759546">Bel 06-13759546</a><a class="btn secondary" href="mailto:falchovenier@proton.me?subject=Offerte%20aanvragen">Mail mij</a></div></div></div></section>
   </main>
   <footer><div class="container footer-inner"><div class="footer-meta"><a href="tel:+31613759546">06-13759546</a><a href="mailto:falchovenier@proton.me?subject=Offerte%20aanvragen">falchovenier@proton.me</a><span>KvK 42212376</span></div></div></footer>
-  <script>
-    fetch('https://raw.githubusercontent.com/FalcHovenier/website/60513867bd395dfcf6fbccbb1000b90bb3fb6a38/index.html')
-      .then(response => response.ok ? response.text() : Promise.reject())
-      .then(html => {
-        const original = new DOMParser().parseFromString(html, 'text/html').querySelector('.hero-text img');
-        const logo = document.getElementById('brand-logo');
-        if (original && original.src.startsWith('data:image/')) {
-          logo.src = original.src;
-          logo.hidden = false;
-        }
-      })
-      .catch(() => {});
-  </script>
 </body>
 </html>
