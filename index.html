@@ -10,7 +10,7 @@
   <style>
     :root{--forest:#153e2e;--forest-soft:#224f3a;--olive:#849137;--olive-dark:#5f6b1d;--tint:#e8f0d8;--sage:#dfe7bd;--paper:#fffdf9;--muted:#475a4a;--line:#d9e0c6;--card:#f7f5ef;--shadow:0 18px 42px rgba(21,62,46,.12)}
     *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:6rem}body{margin:0;background:var(--paper);color:var(--forest);font:1.0625rem/1.7 "Avenir Next","Nunito Sans","Segoe UI",system-ui,sans-serif}h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.03em;line-height:1.12}p{margin:0}a{color:var(--olive-dark)}a:focus-visible,.btn:focus-visible{outline:3px solid var(--olive);outline-offset:3px}.container{width:min(1160px,calc(100% - 2rem));margin:auto}
-    .site-header{position:sticky;top:0;z-index:99;background:#fff;border-bottom:1px solid rgba(21,62,46,.06)}.header-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0}.brand{display:inline-flex;flex-direction:row;align-items:center;gap:.7rem;text-decoration:none;background:transparent;color:inherit}.brand-mark{display:block;width:4.7rem;height:4.7rem;object-fit:cover;object-position:center top;flex:none;background:#fff}.brand-copy{display:flex;flex-direction:column;line-height:1.08;background:transparent}.brand-copy strong{font-size:clamp(1.45rem,2.4vw,1.9rem);font-weight:800;letter-spacing:-.045em;color:#315d3b}.brand-copy span{font-size:clamp(.95rem,1.6vw,1.12rem);font-weight:700;letter-spacing:.015em;color:#849137;margin-top:.32rem}.nav{display:flex;align-items:center;justify-content:flex-end;gap:1.2rem;flex-wrap:wrap}.nav a{text-decoration:none;color:var(--forest-soft);font-weight:700}
+    .site-header{position:sticky;top:0;z-index:99;background:#fff;border-bottom:1px solid rgba(21,62,46,.06)}.header-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.7rem 0}.brand{display:flex;align-items:center;gap:1rem;text-decoration:none;color:inherit;white-space:nowrap}.brand-mark{display:block;width:clamp(180px,23vw,430px);height:auto;flex:none;background:transparent}.brand-copy{display:flex;flex-direction:column;line-height:.83;transform:translateY(.15em)}.brand-copy strong{font-size:clamp(4rem,7vw,11rem);font-weight:800;letter-spacing:-.07em;color:var(--forest);display:inline-block}.brand-copy span{font-size:clamp(2.2rem,3.2vw,5.1rem);font-weight:700;letter-spacing:-.04em;color:var(--olive);display:inline-block;line-height:1.06;margin-top:.2em}.nav{display:flex;align-items:center;justify-content:flex-end;gap:1.2rem;flex-wrap:wrap}.nav a{text-decoration:none;color:var(--forest-soft);font-weight:700}
     .btns{display:flex;flex-wrap:wrap;gap:.8rem}.btn{display:inline-block;text-decoration:none;font-weight:800;border-radius:999px;padding:.95rem 1.6rem;border:2px solid var(--forest);transition:transform .2s ease,box-shadow .2s ease}.btn:hover{transform:translateY(-1px)}.btn.primary{background:var(--forest);color:#fff;box-shadow:0 12px 26px rgba(21,62,46,.18)}.btn.secondary{background:transparent;color:var(--forest)}
     .hero{background:linear-gradient(180deg,var(--tint),#f7f9ef);overflow:hidden}.hero-inner{display:grid;grid-template-columns:1fr 1.2fr;align-items:center;gap:2.5rem;padding:clamp(3rem,7vw,6.5rem) 0}.hero-copy{max-width:42rem}.eyebrow{display:inline-block;margin-bottom:1rem;padding:.4rem .7rem;border-radius:999px;background:rgba(132,145,55,.12);color:var(--olive-dark);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:800}.hero h1{font-size:clamp(2.5rem,5vw,4.6rem);margin-bottom:1rem;max-width:15ch}.hero p{color:var(--muted);font-size:1.12rem;max-width:35rem;margin-bottom:2rem}.trust-row{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;margin-top:1.5rem;color:var(--forest-soft);font-weight:700;font-size:.96rem}.trust-row span{display:inline-flex;align-items:center;gap:.45rem}.trust-row span:before{content:"•";color:var(--olive);font-size:1.4rem;line-height:1}
     .hero-card{background:transparent;border:none;box-shadow:none;padding:0}.mini-visual{position:relative;min-height:430px;border-radius:1.4rem;overflow:hidden;background:#e8f0d8;border:1px solid rgba(21,62,46,.08);box-shadow:var(--shadow)}.hero-video{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1) contrast(1) brightness(1)}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin-top:1rem}.stat{background:transparent;border:0;border-radius:0;padding:1rem .9rem;text-align:center}.stat strong{display:block;font-size:1.5rem;letter-spacing:-.04em}.stat span{color:var(--muted);font-size:.82rem;font-weight:700}
@@ -24,12 +24,30 @@
     .footer-inner{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.4rem .9rem;text-align:center}
     .footer-meta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.4rem .9rem}
     .footer-meta a,.footer-meta span{color:#edf5e3;text-decoration:none;font-weight:600;font-size:.95rem}
-    @media(max-width:900px){.hero-inner,.split-inner,.cta-panel,.services-grid,.why-grid,.process-grid,.testimonial-grid{grid-template-columns:1fr}.header-inner{flex-direction:row;align-items:center;flex-wrap:wrap}.nav{justify-content:flex-start}}@media(max-width:540px){.stats{grid-template-columns:1fr}.brand-mark{width:4.2rem;height:4.2rem}.brand-copy strong{font-size:1.35rem}.brand-copy span{font-size:.9rem}.mini-visual{min-height:340px}.footer-meta{gap:.25rem .7rem}.footer-meta a,.footer-meta span{font-size:.85rem}}
+    @media(max-width:900px){.hero-inner,.split-inner,.cta-panel,.services-grid,.why-grid,.process-grid,.testimonial-grid{grid-template-columns:1fr}.header-inner{flex-direction:row;align-items:center;flex-wrap:wrap}.nav{justify-content:flex-start}}@media(max-width:540px){.stats{grid-template-columns:1fr}.brand-mark{width:clamp(140px,34vw,230px)}.brand-copy strong{font-size:clamp(2.4rem,9vw,4.4rem)}.brand-copy span{font-size:clamp(1.3rem,5vw,2.2rem)}.mini-visual{min-height:340px}.footer-meta{gap:.25rem .7rem}.footer-meta a,.footer-meta span{font-size:.85rem}}
   </style>
 </head>
 <body>
   <header class="site-header"><div class="container header-inner">
-    <a class="brand" href="#top" aria-label="FalcHovenier — ecologische tuinen"><img id="brand-logo" class="brand-mark" alt="Beeldmerk FalcHovenier" hidden><span class="brand-copy"><strong>FalcHovenier</strong><span>ecologische tuinen</span></span></a>
+    <a class="brand" href="#top" aria-label="FalcHovenier — ecologische tuinen">
+      <svg class="brand-mark" viewBox="0 0 760 760" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="380" cy="380" r="300" fill="#153e2e"/>
+        <path d="M160 428C160 246 266 145 420 146C476 146 519 156 560 177C520 200 492 227 470 268C415 227 382 215 336 223C258 236 217 290 208 358C203 393 212 425 228 450C204 451 182 443 160 428Z" fill="#153e2e" stroke="#153e2e" stroke-width="10" stroke-linejoin="round"/>
+        <path d="M381 242C430 250 463 270 492 310C517 345 530 380 526 426C514 389 492 358 457 335C420 310 389 294 354 293C395 261 384 247 381 242Z" fill="#153e2e"/>
+        <path d="M356 283C401 285 445 305 475 347C505 388 511 430 488 472C458 448 422 432 380 425C346 420 315 420 286 430C308 397 327 353 346 322C352 313 356 297 356 283Z" fill="#153e2e"/>
+        <circle cx="455" cy="332" r="28" fill="#fff"/>
+        <circle cx="455" cy="332" r="12" fill="#153e2e"/>
+        <path d="M358 318C392 312 421 315 453 328C441 348 428 360 415 372C387 364 365 351 341 335C337 329 341 321 358 318Z" fill="#153e2e"/>
+        <path d="M638 420C532 348 510 311 515 254C519 194 565 159 617 164C671 170 719 214 720 282C721 348 674 404 638 420Z" fill="#153e2e" stroke="#153e2e" stroke-width="8"/>
+        <path d="M560 444C615 433 646 409 693 360C654 360 628 367 609 381C591 396 580 413 570 430C564 431 561 435 560 444Z" fill="#9aa75f"/>
+        <path d="M533 480C491 463 454 426 432 383C467 385 496 396 522 421C544 442 556 464 533 480Z" fill="#9aa75f"/>
+        <path d="M325 488C368 540 445 563 494 561C486 610 442 649 390 654C339 659 268 632 240 584C220 548 222 494 248 474C273 456 300 460 325 488Z" fill="#153e2e"/>
+        <path d="M456 513C520 504 559 491 611 467C592 509 567 550 533 581C500 610 468 618 424 611C432 578 443 553 456 513Z" fill="#9aa75f"/>
+        <path d="M315 230C287 180 298 141 345 120C373 107 399 105 434 114C431 142 414 168 389 192C365 214 336 226 315 230Z" fill="#153e2e"/>
+        <path d="M276 493C277 517 286 541 304 557C329 580 364 581 392 570C373 605 342 630 304 639C260 649 215 631 188 601C161 570 154 527 164 492C205 510 234 503 276 493Z" fill="#153e2e"/>
+      </svg>
+      <span class="brand-copy"><strong>FalcHovenier</strong><span>ecologische tuinen</span></span>
+    </a>
     <nav class="nav" aria-label="Hoofdnavigatie"><a href="#diensten">Diensten</a><a href="#waarom">Waarom kiezen</a><a href="#werkwijze">Werkwijze</a><a href="#reviews">Ervaringen</a><a href="#contact">Contact</a></nav>
   </div></header>
   <main id="top">
@@ -62,18 +80,5 @@
     <section id="contact" class="section cta-wrap"><div class="container"><div class="cta-panel"><div><h2>Vraag een offerte aan</h2><p>Woon je in Soest of omgeving? Vertel me wat je wilt verbeteren in je tuin, dan kijken we samen naar de mogelijkheden.</p></div><div class="btns"><a class="btn primary" href="tel:+31613759546">Bel 06-13759546</a><a class="btn secondary" href="mailto:falchovenier@proton.me?subject=Offerte%20aanvragen">Mail mij</a></div></div></div></section>
   </main>
   <footer><div class="container footer-inner"><div class="footer-meta"><a href="tel:+31613759546">06-13759546</a><a href="mailto:falchovenier@proton.me?subject=Offerte%20aanvragen">falchovenier@proton.me</a><span>KvK 42212376</span></div></div></footer>
-  <script>
-    fetch('https://raw.githubusercontent.com/FalcHovenier/website/60513867bd395dfcf6fbccbb1000b90bb3fb6a38/index.html')
-      .then(response => response.ok ? response.text() : Promise.reject())
-      .then(html => {
-        const original = new DOMParser().parseFromString(html, 'text/html').querySelector('.hero-text img');
-        const logo = document.getElementById('brand-logo');
-        if (original && original.src.startsWith('data:image/')) {
-          logo.src = original.src;
-          logo.hidden = false;
-        }
-      })
-      .catch(() => {});
-  </script>
 </body>
 </html>
