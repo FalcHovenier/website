@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-mailhandtekening FalcHovenier</title>
+<style>
+  body{margin:0;background:#f7f9ef;font-family:Arial,Helvetica,sans-serif;color:#153e2e;line-height:1.55}
+  .wrap{max-width:640px;margin:0 auto;padding:28px 20px 48px}
+  h1{font-size:1.5rem;margin:0 0 .4rem}
+  p{margin:.4rem 0;color:#475a4a}
+  .card{background:#fff;border:1px solid #d9e0c6;border-radius:18px;padding:26px 22px;margin:22px 0}
+  button{font:inherit;font-weight:bold;background:#153e2e;color:#fff;border:0;border-radius:999px;padding:12px 24px;cursor:pointer;min-height:44px}
+  button:hover{background:#224f3a}
+  #msg{margin-left:12px;color:#5f6b1d;font-weight:bold}
+  ol{padding-left:1.2rem;color:#475a4a} li{margin:.35rem 0}
+  .note{font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Je e-mailhandtekening</h1>
+  <p>Klik op de knop om de handtekening te kopiëren en plak hem daarna in de instellingen van je e-mailprogramma.</p>
+
+  <div class="card">
+    <!-- ===== Begin handtekening ===== -->
+    <div id="sig">
+      <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
+        <tr>
+          <td valign="middle" style="padding:0 18px 0 0;">
+            <a href="https://www.falchovenier.nl/" style="text-decoration:none;border:0;"><img src="https://www.falchovenier.nl/logo-email.png" width="96" height="96" alt="FalcHovenier" style="display:block;border:0;width:96px;height:96px;border-radius:16px;"></a>
+          </td>
+          <td valign="middle" style="padding:2px 0 2px 18px;border-left:2px solid #849137;">
+            <div style="font-size:18px;line-height:22px;font-weight:bold;color:#153e2e;">Falco Joosten</div>
+            <div style="font-size:14px;line-height:20px;padding:1px 0 8px 0;"><span style="font-weight:bold;color:#153e2e;">Falc</span><span style="font-weight:bold;color:#849137;">Hovenier</span><span style="color:#475a4a;">&nbsp;&middot;&nbsp;ecologische tuinen</span></div>
+            <div style="font-size:13px;line-height:20px;color:#475a4a;"><span style="color:#5f6b1d;font-weight:bold;">T</span>&nbsp;&nbsp;<a href="tel:+31613759546" style="color:#475a4a;text-decoration:none;">06-13759546</a></div>
+            <div style="font-size:13px;line-height:20px;color:#475a4a;"><span style="color:#5f6b1d;font-weight:bold;">E</span>&nbsp;&nbsp;<a href="mailto:falchovenier@proton.me" style="color:#475a4a;text-decoration:none;">falchovenier@proton.me</a></div>
+            <div style="font-size:13px;line-height:20px;color:#475a4a;"><span style="color:#5f6b1d;font-weight:bold;">W</span>&nbsp;&nbsp;<a href="https://www.falchovenier.nl" style="color:#5f6b1d;text-decoration:none;font-weight:bold;">www.falchovenier.nl</a></div>
+            <div style="font-size:11px;line-height:16px;color:#7b8a7f;padding-top:8px;">KvK 42212376&nbsp;&nbsp;|&nbsp;&nbsp;BTW NL005588317B11</div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- ===== Einde handtekening ===== -->
+  </div>
+
+  <p><button type="button" id="copy">Kopieer handtekening</button><span id="msg" role="status"></span></p>
+
+  <div class="card" style="margin-top:28px">
+    <p style="margin-top:0"><strong>Zo zet je hem in je mail</strong></p>
+    <ol>
+      <li><strong>Proton Mail:</strong> Instellingen, Alle instellingen, Identiteiten en adressen, kies je adres, Handtekening. Plak hem daar in het vak.</li>
+      <li><strong>Gmail:</strong> Instellingen, Alle instellingen, tabblad Algemeen, Handtekening, Nieuwe maken. Plak hem in het vak.</li>
+      <li><strong>Outlook:</strong> Bestand, Opties, E-mail, Handtekeningen, Nieuw. Plak hem in het vak.</li>
+    </ol>
+    <p class="note">Het logo wordt van je website geladen. Zorg dus dat <strong>logo-email.png</strong> op je site staat, naast index.html, voordat je kopieert. Sommige ontvangers zien het plaatje pas nadat ze externe afbeeldingen hebben toegestaan. De tekst en de links werken altijd.</p>
+  </div>
+</div>
+<script>
+  document.getElementById('copy').addEventListener('click',function(){
+    var el=document.getElementById('sig'),sel=window.getSelection(),r=document.createRange(),msg=document.getElementById('msg');
+    r.selectNodeContents(el);sel.removeAllRanges();sel.addRange(r);
+    var ok=false;try{ok=document.execCommand('copy')}catch(e){}
+    msg.textContent=ok?'Gekopieerd! Plak hem nu in je e-mailinstellingen.':'Kopiëren lukt niet automatisch. Je hebt de handtekening nu geselecteerd: druk op Ctrl+C (of Cmd+C).';
+  });
+</script>
+</body>
+</html>
