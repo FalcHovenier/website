@@ -118,10 +118,40 @@
     .step p{color:var(--muted)}
 
     /* Contact */
+    /* Over mij */
+    .about{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:clamp(1.5rem,4vw,3.5rem);background:var(--card);border:1px solid var(--line);border-radius:1.6rem;overflow:hidden}
+    .about .portrait{aspect-ratio:4/5;background:var(--tint)}
+    .about .portrait img{display:block;width:100%;height:100%;object-fit:cover}
+    .about-text{padding:clamp(1.5rem,4vw,2.5rem) clamp(1.4rem,3vw,2.5rem) clamp(1.5rem,4vw,2.5rem) 0}
+    .about h2{font-size:clamp(1.8rem,4vw,2.9rem);margin-bottom:1rem}
+    .about p{color:var(--muted);font-size:1.08rem;margin-bottom:.9rem}
+    .about .sign{color:var(--forest);font-weight:800;margin:1.2rem 0 0}
+    .about.no-photo{grid-template-columns:1fr}
+    .about.no-photo .about-text{padding:clamp(1.5rem,4vw,2.5rem);max-width:46rem}
+
     .cta-wrap{background:linear-gradient(180deg,#f8faf3,#edf3d7)}
-    .cta-panel{display:grid;grid-template-columns:1.2fr auto;gap:1.5rem;align-items:center;background:#fff;border:1px solid rgba(21,62,46,.08);border-radius:1.6rem;box-shadow:var(--shadow);padding:clamp(1.5rem,4vw,2.5rem)}
-    .cta-panel h2{font-size:clamp(1.8rem,4vw,2.9rem);margin-bottom:.5rem}
+    .cta-panel{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start;background:#fff;border:1px solid rgba(21,62,46,.08);border-radius:1.6rem;box-shadow:var(--shadow);padding:clamp(1.5rem,4vw,2.75rem)}
+    .cta-panel h2{font-size:clamp(1.8rem,4vw,2.9rem);margin-bottom:.6rem}
     .cta-panel p{color:var(--muted);max-width:38rem}
+    .cta-panel .btns{margin-top:1.4rem}
+
+    /* Contactformulier */
+    .form{display:grid;gap:1rem}
+    .field{display:grid;gap:.35rem}
+    .field label{font-weight:800;font-size:.95rem}
+    .field .opt{font-weight:600;color:var(--muted)}
+    .field input,.field textarea{width:100%;font:inherit;font-size:1rem;color:var(--forest);background:var(--paper);border:1.5px solid var(--line);border-radius:.9rem;padding:.8rem 1rem;min-height:48px;transition:border-color .2s ease,box-shadow .2s ease}
+    .field textarea{min-height:9rem;resize:vertical;line-height:1.5}
+    .field input:focus,.field textarea:focus{outline:none;border-color:var(--olive);box-shadow:0 0 0 4px rgba(132,145,55,.22)}
+    .field input:user-invalid,.field textarea:user-invalid{border-color:#b3412f}
+    .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+    .form .btn{width:100%;cursor:pointer;font:inherit;font-weight:800;border:2px solid var(--forest)}
+    .form .btn[disabled]{opacity:.65;cursor:progress}
+    .form-note{font-size:.88rem;color:var(--muted)}
+    .form-status{border-radius:.9rem;padding:.9rem 1.1rem;font-weight:700}
+    .form-status[hidden]{display:none}
+    .form-status.ok{background:var(--tint);border:1px solid var(--line);color:var(--forest)}
+    .form-status.err{background:#fbeae6;border:1px solid #efc2b8;color:#7a2a1c}
 
     footer{background:var(--forest);color:#bfd0b6;padding:1rem 0}
     .footer-meta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.4rem 1.2rem;text-align:center}
@@ -134,6 +164,9 @@
       .hero-inner,.why-inner,.cta-panel,.services-grid{grid-template-columns:1fr}
       .process-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .life-item,.life-item:nth-child(even){grid-template-columns:1fr;gap:0}
+      .about{grid-template-columns:1fr;gap:0}
+      .about .portrait{aspect-ratio:4/3}
+      .about-text{padding:1.4rem 1.4rem 1.7rem}
       .life-item:nth-child(even) .photo{order:0}
       .life-item:not(.no-photo) figcaption{padding:1.3rem 1.4rem 1.6rem}
       .hero-inner{gap:1.75rem}
@@ -171,7 +204,7 @@
       <svg class="open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 6.5h16M4 12h16M4 17.5h16"/></svg>
       <svg class="close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
-    <nav class="nav" id="nav" aria-label="Hoofdnavigatie"><a href="#diensten">Diensten</a><a href="#waarom">Waarom</a><a href="#leven">Leven in je tuin</a><a href="#werkwijze">Werkwijze</a><a href="#contact">Contact</a></nav>
+    <nav class="nav" id="nav" aria-label="Hoofdnavigatie"><a href="#diensten">Diensten</a><a href="#waarom">Waarom</a><a href="#leven">Leven in je tuin</a><a href="#werkwijze">Werkwijze</a><a href="#over-mij">Over mij</a><a href="#contact">Contact</a></nav>
   </div></header>
 
   <main id="top">
@@ -179,7 +212,7 @@
       <div class="hero-copy">
         <h1>Een tuin die mooier wordt, in harmonie met de natuur</h1>
         <p>Ik verzorg tuinen in Soest en omgeving, met aandacht voor een gezonde bodem, inheemse planten en een aanpak die past bij jouw tuin.</p>
-        <div class="btns"><a class="btn primary" href="tel:+31613759546">Bel voor een afspraak</a><a class="btn secondary" href="mailto:falchovenier@proton.me?subject=Tuinadvies%20aanvragen">Mail voor meer informatie</a></div>
+        <div class="btns"><a class="btn primary" href="tel:+31613759546">Bel voor een afspraak</a><a class="btn secondary" href="#contact">Vraag een offerte aan</a></div>
       </div>
       <div class="mini-visual"><video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="tuin-poster.jpg" aria-label="Video van een tuin van FalcHovenier"><source src="tuin.mp4" type="video/mp4">Je browser kan deze video niet afspelen.</video></div>
     </div></section>
@@ -190,7 +223,7 @@
         <article class="service-card"><h3>Tuinonderhoud</h3><p>Ik houd je tuin het hele jaar mooi en in balans door te maaien, te wieden en je borders te verzorgen.</p></article>
         <article class="service-card"><h3>Snoeien</h3><p>Ik snoei struiken, heesters en bomen op het juiste moment en op de juiste manier, zodat ze gezond blijven en mooi doorgroeien.</p></article>
         <article class="service-card"><h3>Natuurlijke borders</h3><p>Ik maak borders met vaste planten en inheemse struiken voor meer biodiversiteit en een levendige tuin.</p></article>
-        <article class="service-card"><h3>Kringloop van het groen</h3><p>Snoeisel, blad en grond zijn waardevolle grondstoffen. Ik herbruik takken en bladeren, zodat ze waar mogelijk weer een nuttige plek krijgen.</p></article>
+        <article class="service-card"><h3>Kringloop van het groen</h3><p>Snoeisel, blad en grond zijn waardevolle grondstoffen. Ik neem ze mee in mijn eigen kipperwagen, zodat jij er geen werk aan hebt en ze waar mogelijk weer een nuttige plek krijgen.</p></article>
       </div>
     </div></section>
 
@@ -200,8 +233,8 @@
         <ul class="check-list"><li>Meer vogels, insecten en leven in je tuin</li><li>Een gezonde bodem en sterke planten</li><li>Regenwater beter vasthouden</li><li>Een tuin die in balans is en rust uitstraalt</li></ul>
       </div>
       <div class="why-points">
-        <article class="why-card"><div class="icon" aria-hidden="true">🌱</div><div><h3>Werken met de bodem</h3><p>Ik werk samen met de bodem en kies planten die passen bij de natuurlijke omgeving en lokale grondsoort.</p></div></article>
-        <article class="why-card"><div class="icon" aria-hidden="true">♻️</div><div><h3>Bewust tuinieren</h3><p>Ik werk met compost, organisch materiaal en gebruik natuurvriendelijke methoden, met zo min mogelijk verspilling.</p></div></article>
+        <article class="why-card"><div class="icon" aria-hidden="true">🌱</div><div><h3>Werken met de bodem</h3><p>Ik werk samen met de bodem van deze omgeving en kies planten die passen bij de natuurlijke omgeving en jouw grondsoort.</p></div></article>
+        <article class="why-card"><div class="icon" aria-hidden="true">♻️</div><div><h3>Bewust tuinieren</h3><p>Ik werk met compost, organisch materiaal en natuurvriendelijke methoden, met zo min mogelijk verspilling.</p></div></article>
         <article class="why-card"><div class="icon" aria-hidden="true">💬</div><div><h3>Persoonlijk contact</h3><p>Samen kijken we naar wat jouw tuin nodig heeft en wat jij belangrijk vindt, in jouw tempo.</p></div></article>
       </div>
     </div></section>
@@ -212,7 +245,7 @@
         <figure class="life-item"><div class="photo"><img src="foto-bodemleven.jpg" alt="Doorsnede van donkere, gezonde grond met gras en een klaverbloem" loading="lazy" onerror="this.closest('.life-item').classList.add('no-photo');this.parentNode.remove()"></div><figcaption><h3>Bodemleven eerst</h3><p>Borders met inheemse planten, een laag mulch en zo min mogelijk omspitten. Zo krijgen wormen, schimmels en insecten de kans om je bodem gezond te maken.</p></figcaption></figure>
         <figure class="life-item"><div class="photo"><img src="foto-egel.jpg" alt="Egel tussen herfstbladeren in het gras" loading="lazy" onerror="this.closest('.life-item').classList.add('no-photo');this.parentNode.remove()"></div><figcaption><h3>Een thuis voor de egel</h3><p>Een opening van ongeveer 13 bij 13 cm in de schutting en een takkenril of bladhoop als schuilplek: zo vindt de egel zijn weg door de buurt.</p></figcaption></figure>
         <figure class="life-item"><div class="photo"><img src="foto-vijver.jpg" alt="Pad in het water van een vijver tussen waterplanten" loading="lazy" onerror="this.closest('.life-item').classList.add('no-photo');this.parentNode.remove()"></div><figcaption><h3>Water in de tuin</h3><p>Een vijver of poel met een ondiepe oever trekt libellen, kikkers, padden en vogels aan en is een drinkplek voor alles wat er langskomt.</p></figcaption></figure>
-        <figure class="life-item"><div class="photo"><img src="foto-vogels.jpg" alt="Winterkoning op een tak" loading="lazy" onerror="this.closest('.life-item').classList.add('no-photo');this.parentNode.remove()"></div><figcaption><h3>Vogels</h3><p>Struiken met bessen, nestkasten en een tuin vol insecten brengen vogels terug.</p></figcaption></figure>
+        <figure class="life-item"><div class="photo"><img src="foto-vogels.jpg" alt="Winterkoning op een tak" loading="lazy" onerror="this.closest('.life-item').classList.add('no-photo');this.parentNode.remove()"></div><figcaption><h3>Vogels</h3><p>Struiken met bessen, nestkasten en een tuin vol insecten brengen zangvogels terug, zoals de winterkoning.</p></figcaption></figure>
       </div>
     </div></section>
 
@@ -226,15 +259,43 @@
       </div>
     </div></section>
 
+    <section id="over-mij" class="section"><div class="container">
+      <div class="about">
+        <div class="portrait"><img src="foto-falco.jpg" alt="Falco Joosten" loading="lazy" onerror="this.closest('.about').classList.add('no-photo');this.parentNode.remove()"></div>
+        <div class="about-text">
+          <h2>Hoi, ik ben Falco</h2>
+          <p>Ik woon in Soest. Als klein jongetje wilde ik al het liefst de hele dag buiten zijn, en dat is nooit veranderd.</p>
+          <p>Ik houd van de natuur met al haar dieren en planten, van de worm in de bodem tot de vogel in de struik. Daarom maak ik tuinen waarin ook voor hen ruimte is.</p>
+          <p class="sign">Falco Joosten</p>
+        </div>
+      </div>
+    </div></section>
+
     <section id="contact" class="section cta-wrap"><div class="container"><div class="cta-panel">
-      <div><h2>Neem contact op</h2><p>Woon je in Soest of omgeving? Vertel me wat je in je tuin wilt verbeteren, dan kijken we samen naar de mogelijkheden.</p></div>
-      <div class="btns"><a class="btn primary" href="tel:+31613759546">Bel mij</a><a class="btn secondary" href="mailto:falchovenier@proton.me?subject=Offerte%20aanvragen">Mail mij</a></div>
+      <div>
+        <h2>Vraag een offerte aan</h2>
+        <p>Woon je in Soest of omgeving? Vertel me wat je in je tuin wilt verbeteren, dan kijken we samen naar de mogelijkheden.</p>
+        <div class="btns"><a class="btn primary" href="tel:+31613759546">Bel 06-13759546</a><a class="btn secondary" href="mailto:falchovenier@proton.me">Mail mij</a></div>
+      </div>
+      <form class="form" id="contactform" data-endpoint="https://formsubmit.co/ajax/falchovenier@proton.me" action="https://formsubmit.co/falchovenier@proton.me" method="POST" novalidate>
+        <div class="field"><label for="cf-naam">Naam</label><input id="cf-naam" name="naam" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="cf-email">E-mailadres</label><input id="cf-email" name="email" type="email" autocomplete="email" inputmode="email" required></div>
+        <div class="field"><label for="cf-tel">Telefoonnummer <span class="opt">(niet verplicht)</span></label><input id="cf-tel" name="telefoon" type="tel" autocomplete="tel" inputmode="tel"></div>
+        <div class="field"><label for="cf-bericht">Wat wil je met je tuin?</label><textarea id="cf-bericht" name="bericht" required></textarea></div>
+        <div class="hp" aria-hidden="true"><label>Dit veld leeg laten <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></div>
+        <input type="hidden" name="_subject" value="Nieuwe aanvraag via falchovenier.nl">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <button class="btn primary" type="submit">Verstuur bericht</button>
+        <p class="form-note">Je gegevens gebruik ik alleen om je aanvraag te beantwoorden.</p>
+        <div class="form-status" id="formstatus" role="status" aria-live="polite" hidden></div>
+      </form>
     </div></div></section>
   </main>
 
-  <footer><div class="container"><div class="footer-meta"><a href="tel:+31613759546">0613759546</a><a href="mailto:falchovenier@proton.me?subject=Offerte%20aanvragen">falchovenier@proton.me</a><span>KvK 42212376</span></div></div></footer>
+  <footer><div class="container"><div class="footer-meta"><a href="tel:+31613759546">06-13759546</a><a href="mailto:falchovenier@proton.me?subject=Offerte%20aanvragen">falchovenier@proton.me</a><span>KvK 42212376</span></div></div></footer>
 
-  <div class="mobile-bar"><a class="btn primary" href="tel:+31613759546">Bel mij</a><a class="btn secondary" href="mailto:falchovenier@proton.me?subject=Offerte%20aanvragen">Mail mij</a></div>
+  <div class="mobile-bar"><a class="btn primary" href="tel:+31613759546">Bel mij</a><a class="btn secondary" href="#contact">Offerte</a></div>
 
   <script>
     (function(){
@@ -246,6 +307,26 @@
       document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false)});
       function onScroll(){h.classList.toggle('scrolled',window.scrollY>40)}
       window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+      var f=document.getElementById('contactform');
+      if(f){
+        var st=document.getElementById('formstatus'),btn=f.querySelector('button[type=submit]');
+        function say(t,c){st.hidden=false;st.className='form-status '+c;st.textContent=t}
+        f.addEventListener('submit',function(e){
+          e.preventDefault();
+          if(f.querySelector('[name=_honey]').value){return}
+          if(!f.checkValidity()){f.reportValidity();return}
+          btn.disabled=true;btn.textContent='Versturen…';st.hidden=true;
+          var d={};new FormData(f).forEach(function(v,k){d[k]=v});
+          fetch(f.dataset.endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+            .then(function(r){return r.json().then(function(j){return{ok:r.ok,j:j}})})
+            .then(function(x){
+              if(x.ok&&(x.j.success===true||x.j.success==='true')){f.reset();say('Bedankt voor je bericht! Ik neem zo snel mogelijk contact met je op.','ok')}
+              else{throw new Error('mislukt')}
+            })
+            .catch(function(){say('Versturen is niet gelukt. Bel of mail me gerust: 06-13759546 of falchovenier@proton.me.','err')})
+            .then(function(){btn.disabled=false;btn.textContent='Verstuur bericht'});
+        });
+      }
       var v=document.querySelector('.hero-video');
       if(v&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause()}
     })();
